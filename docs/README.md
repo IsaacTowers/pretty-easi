@@ -6,7 +6,7 @@ pretty-easi is a plugin to incorporate some functionality from the  [SpiecEasi](
 
 ### QIIME2
 
-<img align="right" src="../images/qiime2.png">
+<img align="right" src="/images/qiime2.png">
 
 [QIIME 2](https://qiime2.org/) is a powerful, extensible, and decentralized microbiome analysis package with a focus on data and analysis transparency. QIIME 2 enables researchers to start an analysis with raw DNA sequence data and finish with publication-quality figures and statistical results.
 
@@ -122,7 +122,7 @@ qiime pretty-easi spiec-easi --i-table spongeFeatureTable.qza \\
 
 The remaining parameters relate to selection of the optimal penalty $\lambda$ in each method's [lasso](https://en.wikipedia.org/wiki/Lasso_(statistics)) like optimization problem. The network inference algorithms search for the optimal $\lambda$ penalty where the complete graph and an empty graph are at the extremes of the search range. Essentially the process is finding a balance between network sparsity and least-squares fit. 
 
-The range of $\lambda$ values tested is between ```--p-lambda-min-ratio```$\times\lambda_{max}$ and $\lambda_{max}$, where $\lambda_{max}$ is the theoretical upper bound on $\lambda$. This upper bound is  $\max|S|$, the maximum absolute value in the data correlation matrix.
+The range of λ values tested is between ```--p-lambda-min-ratio```× λmax and λmax, where λmax is the theoretical upper bound on λ. This upper bound is  max|S|, the maximum absolute value in the data correlation matrix.
 
 The lambda range is sampled logarithmically ```--p-nlambda``` times.
 
