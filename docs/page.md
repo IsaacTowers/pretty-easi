@@ -6,7 +6,7 @@ pretty-easi is a plugin to incorporate some functionality from the  [SpiecEasi](
 
 ### QIIME2
 
-<img align="right" src="images/qiime2.png">
+<img align="right" src="../images/qiime2.png">
 
 [QIIME 2](https://qiime2.org/) is a powerful, extensible, and decentralized microbiome analysis package with a focus on data and analysis transparency. QIIME 2 enables researchers to start an analysis with raw DNA sequence data and finish with publication-quality figures and statistical results.
 
@@ -16,11 +16,7 @@ SpiecEasi (Sparse InversE Covariance estimation for Ecological Association and S
 
 ### Plug-in Features
 
-pretty-easi is at the $\alpha$ stage. In addition to wrapping the SpiecEasi package it provides a visualisation for generated networks. As development continues additional features will be listed here.
-
-<!-- Things not in the plugin / either no included or not completed -->
-<!-- qiime spieceasi --citations  -->
-<!-- qiime spieceasi --example-data  -->
+pretty-easi is at the α stage. In addition to wrapping the SpiecEasi package it provides a visualisation for generated networks. As development continues additional features will be listed here.
 
 ## Installation
 
@@ -76,21 +72,6 @@ Download the data
 ```
 wget https://github.com/ramellose/networktutorials/raw/master/Workshop%202021/sponges/Suberitida.biom
 ```
-<details><summary>File details</summary>
-The data file is in BIOM format with the following attributes
-
-| Attribute        | Value                        |
-|------------------|------------------------------|
-| "creation-date"  | "2021-01-12T11:53:25.574128" |
-| "format-url"     | "http://biom-format.org"     |
-| "format-version" | Int32[2, 1]                  |
-| "generated-by"   | "BIOM-Format 2.1.6"          |
-|                  |                              |
-| "id"             | "No Table ID"                |
-| "nnz"            | 2023                         |
-| "shape"          | Int32[62, 68]                |
-| "type"           | ""                           |
-</details>
 
 The next step is to import the BIOM file as a frequency [FeatureTable](https://docs.qiime2.org/2022.8/semantic-types/) within QIIME 2.
 
@@ -120,8 +101,8 @@ qiime tools view spongeNet.qzv
 
 The network images should open in your default browser. Alternatively, you can upload ```spongeNet.qva``` to [qiime2view](https://view.qiime2.org/). The network containing the largest number of members is in the tab labelled _Group 1_ , next largest network in the tab _Group 2_, and so on down. Trivial networks of two members and singletons are listed by feature in the _Pairs_ and _Singles_ tab respectively. 
 
-![largest network](images/Sponge_Suberitida_Group1_screen.png)
-![network](images/network.png)
+![largest network](../images/Sponge_Suberitida_Group1_screen.png)
+![network](/images/network.png)
 
 ### Options 
 
