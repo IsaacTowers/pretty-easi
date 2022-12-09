@@ -6,7 +6,7 @@ pretty-easi is a plugin to incorporate some functionality from the  [SpiecEasi](
 
 ### QIIME2
 
-<img align="right" src="/assets/images/qiime2.png">
+<img align="right" src="assets/images/qiime2.png">
 
 [QIIME 2](https://qiime2.org/) is a powerful, extensible, and decentralized microbiome analysis package with a focus on data and analysis transparency. QIIME 2 enables researchers to start an analysis with raw DNA sequence data and finish with publication-quality figures and statistical results.
 
