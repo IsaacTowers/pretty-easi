@@ -101,7 +101,7 @@ qiime tools view spongeNet.qzv
 
 The network images should open in your default browser. Alternatively, you can upload ```spongeNet.qva``` to [qiime2view](https://view.qiime2.org/). The network containing the largest number of members is in the tab labelled _Group 1_ , next largest network in the tab _Group 2_, and so on down. Trivial networks of two members and singletons are listed by feature in the _Pairs_ and _Singles_ tab respectively. 
 
-![Interactive network](https://isaactowers.github.io/pretty-easi/data/index.html)
+[Interactive network](https://isaactowers.github.io/pretty-easi/data/index.html)
 
 ![largest network](assets/images/Sponge_Suberitida_Group1_screen.png)
 ![network](assets/images/network.png)
