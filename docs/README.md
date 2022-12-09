@@ -101,6 +101,8 @@ qiime tools view spongeNet.qzv
 
 The network images should open in your default browser. Alternatively, you can upload ```spongeNet.qva``` to [qiime2view](https://view.qiime2.org/). The network containing the largest number of members is in the tab labelled _Group 1_ , next largest network in the tab _Group 2_, and so on down. Trivial networks of two members and singletons are listed by feature in the _Pairs_ and _Singles_ tab respectively. 
 
+![Interactive network](https://isaactowers.github.io/pretty-easi/data/index.html)
+
 ![largest network](assets/images/Sponge_Suberitida_Group1_screen.png)
 ![network](assets/images/network.png)
 
@@ -125,4 +127,3 @@ The remaining parameters relate to selection of the optimal penalty $\lambda$ in
 The range of λ values tested is between ```--p-lambda-min-ratio```× λmax and λmax, where λmax is the theoretical upper bound on λ. This upper bound is  max(abs(S)), the maximum absolute value in the data correlation matrix.
 
 The lambda range is sampled logarithmically ```--p-nlambda``` times.
-
