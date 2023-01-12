@@ -2,13 +2,14 @@ import unittest
 
 import pandas as pd
 from networkx import read_graphml
-from pretty_easi._spieceasi import spiec_easi
 from qiime2 import Artifact
 from qiime2.plugin.testing import TestPluginBase
 
+from q2_makarsa._spieceasi import spiec_easi
+
 
 class Testspieceasioutput(TestPluginBase):
-    package = "pretty_easi.tests"
+    package = "q2_makarsa.tests"
 
     def setUp(self):
         super().setUp()
@@ -36,6 +37,7 @@ class Testspieceasioutput(TestPluginBase):
             for (c, d) in self.generated_network.degree()
             if ((a == c) and (b == d))
         ]
+
         for i in self.generated_network.degree():
             if i in my_list:
                 self.assertTrue(True)
@@ -48,6 +50,7 @@ class Testspieceasioutput(TestPluginBase):
             for (c, d) in self.generated_network.edges()
             if ((a == c) and (b == d)) or ((a == d) and (b == c))
         ]
+
         for i in self.generated_network.edges():
             if i in my_list_edges:
                 self.assertTrue(True)

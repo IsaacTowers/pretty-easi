@@ -6,14 +6,15 @@ from qiime2.plugin.testing import TestPluginBase
 
 
 class testnetwork(TestPluginBase):
-    package = "pretty_easi.tests"
+    package = "q2_makarsa.tests"
 
     def setUp(self):
         super().setUp()
         self.network = self.get_data_path("network.graphml")
         self.expected_network = read_graphml(self.network)
         self.imported_network = Artifact.import_data(
-            "Network", self.expected_network)
+            "Network", self.expected_network
+        )
         self.qiime_network = self.imported_network.view(Graph)
 
     def test_defaults(self):

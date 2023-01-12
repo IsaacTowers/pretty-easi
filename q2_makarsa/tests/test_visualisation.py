@@ -2,22 +2,25 @@ import tempfile
 import unittest
 
 from networkx import Graph, read_graphml
-from pretty_easi._visualisation import get_connected_components, graph_to_spec
 from qiime2 import Artifact
 from qiime2.plugin.testing import TestPluginBase
 
+from q2_makarsa._visualisation import get_connected_components, graph_to_spec
+
 
 class testnetwork(TestPluginBase):
-    package = "pretty_easi.tests"
+    package = "q2_makarsa.tests"
 
     def setUp(self):
         super().setUp()
         self.temp_dir = tempfile.TemporaryDirectory(
-            prefix="q2-pretty_easi-test-temp-")
+            prefix="q2-makarsa-test-temp-"
+        )
         self.network = self.get_data_path("network.graphml")
         self.expected_network = read_graphml(self.network)
         self.imported_network = Artifact.import_data(
-            "Network", self.expected_network)
+            "Network", self.expected_network
+        )
         self.qiime_network = self.imported_network.view(Graph)
 
     def test_graph_to_spec(self):
