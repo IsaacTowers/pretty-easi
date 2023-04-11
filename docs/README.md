@@ -65,6 +65,9 @@ development continues additional features will be listed here.
   * Node attributes can be added via feature metadata (eg. taxonomy, DNA sequence, differential abundance scores)
     * If node attributes are taxonomic labels, visualisation offers
 			  colourings at any taxonomic level
+			  
+{% include_relative _includes/data/index.html %}
+
 
 ## Installation
 
