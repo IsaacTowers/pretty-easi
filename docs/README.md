@@ -36,7 +36,7 @@ environmental or technical factors into the analysis of microbial systems.
 
 ### Plug-in Features
 
-q2-makarsa is at the $\alpha$ stage. In addition to wrapping the SpiecEasi and
+q2-makarsa is at the α stage. In addition to wrapping the SpiecEasi and
 FlashWeave packages it provides a visualisation for generated networks. As
 development continues additional features will be listed here.
 
@@ -201,19 +201,19 @@ qiime makarsa spiec-easi \
 			--p-method mb 
 ```
 
-The remaining parameters relate to selection of the optimal penalty $\lambda$
+The remaining parameters relate to selection of the optimal penalty λ
 in each method's [lasso](https://en.wikipedia.org/wiki/Lasso_(statistics)) like
 optimization problem. The network inference algorithms search for the optimal
-$\lambda$ penalty where the complete graph and an empty graph are at the
+λ penalty where the complete graph and an empty graph are at the
 extremes of the search range. Essentially the process is finding a balance
 between network sparsity and least-squares fit. 
 
-The range of $\lambda$ values tested is between `--p-lambda-min-ratio`
-$\times\lambda_{max}$ and $\lambda_{max}$, where
-$\lambda_{max}$ is the theoretical upper bound on $\lambda$. This upper bound
-is  $\max|S|$, the maximum absolute value in the data correlation matrix.
+The range of λ values tested is between `--p-lambda-min-ratio`
+∗ λ<sub>max</sub> and λ<sub>max</sub>, where
+λ<sub>max</sub> is the theoretical upper bound on λ. This upper bound
+is max|S|, the maximum absolute value in the data correlation matrix.
 
-The lambda range is sampled logarithmically  `--p-nlambda` times.
+The λ range is sampled logarithmically  `--p-nlambda` times.
 
 #### FlashWeave
 
