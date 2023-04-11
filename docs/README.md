@@ -1,7 +1,5 @@
 # q2-makarsa
 
-![ci](https://github.com/BenKaehler/q2-makarsa/actions/workflows/ci.yml/badge.svg)
-
 q2-makarsa is a plugin to incorporate some functionality from the
 [SpiecEasi](https://github.com/zdk123/SpiecEasi) and
 [FlashWeave](https://github.com/meringlab/FlashWeave.jl) packages into the
@@ -11,7 +9,7 @@ QIIME 2 environment together with additional network visualisation.
 
 ### QIIME2
 
-<img align="right" src="images/qiime2.png">
+<img align="right" src="assets/images/qiime2.png">
 
 [QIIME 2](https://qiime2.org/) is a powerful, extensible, and decentralized
 microbiome analysis package with a focus on data and analysis transparency.
@@ -110,8 +108,8 @@ sponges.
 
 Download the data
 
-``` wget
-https://github.com/ramellose/networktutorials/raw/master/Workshop%202021/sponges/Suberitida.biom
+``` 
+wget https://github.com/ramellose/networktutorials/raw/master/Workshop%202021/sponges/Suberitida.biom
 ```
 <details><summary>File details</summary>
 The data file is in BIOM format with the following attributes
@@ -156,7 +154,7 @@ qiime makarsa spiec-easi \
 # Saved Network to: sponge-net.qza
 ```
 
-From the ```sponge-net.qza``` network artefact a visualisation can be created
+From the `sponge-net.qza` network artefact a visualisation can be created
 and then viewed
 
 ```
@@ -168,30 +166,30 @@ qiime tools view sponge-net.qzv
 ```
 
 The network images should open in your default browser. Alternatively, you can
-upload ```sponge-net.qva``` to [qiime2view](https://view.qiime2.org/). The
+upload `sponge-net.qva` to [qiime2view](https://view.qiime2.org/). The
 network containing the largest number of members is in the tab labelled _Group
 1_ , next largest network in the tab _Group 2_, and so on down. Trivial
 networks of two members and singletons are listed by feature in the _Pairs_ and
 _Singles_ tab respectively. 
 
-![largest network](images/Sponge_Suberitida_Group1_screen.png)
-![network](images/network.png)
+![largest network](assests/images/Sponge_Suberitida_Group1_screen.png)
+![network](assets/images/network.png)
 
 ##### SpiecEasi Options 
 
-Several parameter options exist for ```qiime makarsa spiec-easi``` . For a full
-list of parameters and the defaults execute ```qiime makarsa spiec-easi
---help```. Some examples are below.
+Several parameter options exist for `qiime makarsa spiec-easi` . For a full
+list of parameters and the defaults execute `qiime makarsa spiec-easi
+--help`. Some examples are below.
 
-The algorithm utilised to infer the network can be set with ```-p-method```
+The algorithm utilised to infer the network can be set with `-p-method`
 parameter switch and one of 3 keywords:
-1. ```glasso``` [Graphical
+1. `glasso` [Graphical
    LASSO](https://academic.oup.com/biostatistics/article/9/3/432/224260)
    (default)
-2. ``mb``  Neighbourhood selection or [Meinshausen and
+2. `mb`  Neighbourhood selection or [Meinshausen and
    Bühlmann](https://projecteuclid.org/journals/annals-of-statistics/volume-34/issue-3/High-dimensional-graphs-and-variable-selection-with-the-Lasso/10.1214/009053606000000281.full)
    method 
-3. ``slr`` Sparse and Low-Rank method
+3. `slr` Sparse and Low-Rank method
 
 For example to infer the network from the example data using the MB method
 execute the command
@@ -210,12 +208,12 @@ $\lambda$ penalty where the complete graph and an empty graph are at the
 extremes of the search range. Essentially the process is finding a balance
 between network sparsity and least-squares fit. 
 
-The range of $\lambda$ values tested is between ```--p-lambda-min-ratio```
+The range of $\lambda$ values tested is between `--p-lambda-min-ratio`
 $\times\lambda_{max}$ and $\lambda_{max}$, where
 $\lambda_{max}$ is the theoretical upper bound on $\lambda$. This upper bound
 is  $\max|S|$, the maximum absolute value in the data correlation matrix.
 
-The lambda range is sampled logarithmically  ```--p-nlambda``` times.
+The lambda range is sampled logarithmically  `--p-nlambda` times.
 
 #### FlashWeave
 
@@ -240,4 +238,4 @@ View the visualisation as usual
 qiime tools view sponge-net.qzv
 ```
 
-![fw-network](images/sponge-fw-network.png)
+![fw-network](assets/images/sponge-fw-network.png)
