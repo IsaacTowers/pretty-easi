@@ -1,0 +1,4 @@
+theme: midnight
+title: [q2-makarsa]
+description: [A QIIME 2 plug-in to expose some functionality from the SpiecEasi and FlashWeave packages together with additional network visualisation.]
+show_downloads: [true]
