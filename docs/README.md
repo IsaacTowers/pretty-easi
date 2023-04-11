@@ -111,21 +111,6 @@ Download the data
 ``` 
 wget https://github.com/ramellose/networktutorials/raw/master/Workshop%202021/sponges/Suberitida.biom
 ```
-<details><summary>File details</summary>
-The data file is in BIOM format with the following attributes
-
-| Attribute        | Value                        |
-|------------------|------------------------------|
-| "creation-date"  | "2021-01-12T11:53:25.574128" |
-| "format-url"     | "http://biom-format.org"     |
-| "format-version" | Int32[2, 1]                  |
-| "generated-by"   | "BIOM-Format 2.1.6"          |
-|                  |                              |
-| "id"             | "No Table ID"                |
-| "nnz"            | 2023                         |
-| "shape"          | Int32[62, 68]                |
-| "type"           | ""                           |
-</details>
 
 The next step is to import the BIOM file as a frequency [FeatureTable](https://docs.qiime2.org/2022.8/semantic-types/) within QIIME 2.
 
