@@ -6,3 +6,6 @@ description: A QIIME 2 plug-in to expose some functionality from the SpiecEasi a
 show_downloads: true
 github:
   repository_url: https://github.com/BenKaehler/q2-makarsa
+  tar_url: https://github.com/BenKaehler/q2-makarsa/tarball
+  zip_url: https://github.com/BenKaehler/q2-makarsa/zipball
+  owner_url: https://github.com/BenKaehler/
