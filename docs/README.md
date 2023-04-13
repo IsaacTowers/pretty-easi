@@ -60,7 +60,11 @@ development continues additional features will be listed here.
 			  
 ### Example Interactive Visualisation
 
-Select a node in the network below.
+Network of ASVs from the [Parkinson's Mouse
+Tutorial](https://docs.qiime2.org/2023.2/tutorials/pd-mice/), as inferred by
+FlashWeave.  Edge thicknesses represent strength of association and orange
+edges are negative. Nodes can be coloured by metadata like taxonomy, and sized
+by statistics like ANCOM W. Select a node to display metadata. 
 
 {% include_relative _includes/data/index.html %}
 
