@@ -157,7 +157,7 @@ networks of two members and singletons are listed by feature in the _Pairs_ and
 _Singles_ tab respectively. 
 
 
-![largest](assests/images/Sponge_Suberitida_Group1_screen.png)
+![largest](assests/images/SpongeSuberitidaGroup1Screen.png)
 ![network](assets/images/network.png)
 
 ##### SpiecEasi Options 
