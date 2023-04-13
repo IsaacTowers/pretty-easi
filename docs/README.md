@@ -3,18 +3,10 @@
 q2-makarsa is a plugin to incorporate some functionality from the
 [SpiecEasi](https://github.com/zdk123/SpiecEasi) and
 [FlashWeave](https://github.com/meringlab/FlashWeave.jl) packages into the
-QIIME 2 environment together with additional network visualisation.
+[QIIME 2](https://qiime2.org/) environment together with additional network
+visualisation.
 
 ## What is involved
-
-### QIIME2
-
-<img align="right" src="assets/images/qiime2.png">
-
-[QIIME 2](https://qiime2.org/) is a powerful, extensible, and decentralized
-microbiome analysis package with a focus on data and analysis transparency.
-QIIME 2 enables researchers to start an analysis with raw DNA sequence data and
-finish with publication-quality figures and statistical results.
 
 ### SpiecEasi
 
