@@ -58,6 +58,10 @@ development continues additional features will be listed here.
     * If node attributes are taxonomic labels, visualisation offers
 			  colourings at any taxonomic level
 			  
+### Example Interactive Visualisation
+
+Select a node in the network below.
+
 {% include_relative _includes/data/index.html %}
 
 
