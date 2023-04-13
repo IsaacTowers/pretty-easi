@@ -175,10 +175,8 @@ For example to infer the network from the example data using the MB method
 execute the command
 
 ``` 
-qiime makarsa spiec-easi \ 
-			--i-table spongeFeatureTable.qza \ 
-			--o-network sponge-net.qza \ 
-			--p-method mb 
+qiime makarsa spiec-easi --i-table spongeFeatureTable.qza \
+--o-network sponge-net.qza --p-method mb 
 ```
 
 The remaining parameters relate to selection of the optimal penalty λ
