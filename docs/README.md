@@ -1,12 +1,22 @@
 # q2-makarsa
 
+![ci](https://github.com/BenKaehler/q2-makarsa/actions/workflows/ci.yml/badge.svg)
+
 q2-makarsa is a plugin to incorporate some functionality from the
 [SpiecEasi](https://github.com/zdk123/SpiecEasi) and
 [FlashWeave](https://github.com/meringlab/FlashWeave.jl) packages into the
-[QIIME 2](https://qiime2.org/) environment together with additional network
-visualisation.
+QIIME 2 environment together with additional network visualisation.
 
 ## What is involved
+
+### QIIME2
+
+<img align="right" src="images/qiime2.png">
+
+[QIIME 2](https://qiime2.org/) is a powerful, extensible, and decentralized
+microbiome analysis package with a focus on data and analysis transparency.
+QIIME 2 enables researchers to start an analysis with raw DNA sequence data and
+finish with publication-quality figures and statistical results.
 
 ### SpiecEasi
 
@@ -21,14 +31,14 @@ from 16S amplicon sequencing.
 [FlashWeave](https://github.com/meringlab/FlashWeave.jl) is a
 [Julia](https://julialang.org/) based package which predicts ecological
 interactions between microbes from large-scale compositional abundance data
-(i.e. OTU tables constructed from sequencing data) through statistical
+(e.g., ASV or OTU tables constructed from sequencing data) through statistical
 co-occurrence or co-abundance. It reports direct associations, with adjustment
 for bystander effects and other confounders, and can furthermore integrate
 environmental or technical factors into the analysis of microbial systems.
 
 ### Plug-in Features
 
-q2-makarsa is at the α stage. In addition to wrapping the SpiecEasi and
+q2-makarsa is at the $\alpha$ stage. In addition to wrapping the SpiecEasi and
 FlashWeave packages it provides a visualisation for generated networks. As
 development continues additional features will be listed here.
 
@@ -37,12 +47,12 @@ development continues additional features will be listed here.
 * Visualisation features
   * Relationships between features (eg. ASVs, OTUs, MVs, taxa, peptides) are represented as ecological networks
   * The network is interactive and its overall size and shape on the
-		  screen can be manipulated manually.
+          screen can be manipulated manually.
   * An image of the network can be saved to the local device in PNG
-		  format.
+          format.
   * Network nodes can be selected and information on which feature is
-		  represented by the node, statistics, and various centrality measures
-		  for the node will be displayed.
+          represented by the node, statistics, and various centrality measures
+          for the node will be displayed.
   * Network edges are colour coded for positive (blue) and negative
   (orange) correlations
   * Edge thickness is scaled according to statistics appropriate to each method with thicker edges indicating stronger connections between features.
@@ -56,18 +66,7 @@ development continues additional features will be listed here.
   at once.
   * Node attributes can be added via feature metadata (eg. taxonomy, DNA sequence, differential abundance scores)
     * If node attributes are taxonomic labels, visualisation offers
-			  colourings at any taxonomic level
-			  
-### Example Interactive Visualisation
-
-Network of ASVs from the [Parkinson's Mouse
-Tutorial](https://docs.qiime2.org/2023.2/tutorials/pd-mice/), as inferred by
-FlashWeave.  Edge thicknesses represent strength of association and orange
-edges are negative. Nodes can be coloured by metadata like taxonomy, and sized
-by statistics like ANCOM W. Select a node to display metadata. 
-
-{% include_relative _includes/data/index.html %}
-
+              colourings at any taxonomic level
 
 ## Installation
 
@@ -111,19 +110,33 @@ sponges.
 
 Download the data
 
-``` 
-wget https://github.com/ramellose/networktutorials/raw/master/Workshop%202021/sponges/Suberitida.biom
+``` wget
+https://github.com/ramellose/networktutorials/raw/master/Workshop%202021/sponges/Suberitida.biom
 ```
+<details><summary>File details</summary>
+The data file is in BIOM format with the following attributes
+
+| Attribute        | Value                        |
+|------------------|------------------------------|
+| "creation-date"  | "2021-01-12T11:53:25.574128" |
+| "format-url"     | "http://biom-format.org"     |
+| "format-version" | Int32[2, 1]                  |
+| "generated-by"   | "BIOM-Format 2.1.6"          |
+|                  |                              |
+| "id"             | "No Table ID"                |
+| "nnz"            | 2023                         |
+| "shape"          | Int32[62, 68]                |
+| "type"           | ""                           |
+</details>
 
 The next step is to import the BIOM file as a frequency [FeatureTable](https://docs.qiime2.org/2022.8/semantic-types/) within QIIME 2.
 
 ```
 qiime tools import \
-	--input-path Suberitida.biom \
-	--type 'FeatureTable[Frequency]' \
-	--input-format BIOMV210Format \
-	--output-path sponge-feature-table.qza
-# Imported Suberitida.biom as BIOMV210Format to spongeFeatureTable.qza
+    --input-path Suberitida.biom \
+    --type 'FeatureTable[Frequency]' \
+    --input-format BIOMV210Format \
+    --output-path sponge-feature-table.qza
 ```
 The QIIME 2 artefact ```spongeFeatureTable.qza``` should exist in the working
 folder if this command was successful. 
@@ -137,70 +150,70 @@ intended output artefact containing the inferred network.
 
 ```
 qiime makarsa spiec-easi \
-	--i-table sponge-feature-table.qza \
-	--o-network sponge-net.qza
-# Saved Network to: sponge-net.qza
+    --i-table sponge-feature-table.qza \
+    --o-network sponge-net.qza
 ```
 
-From the `sponge-net.qza` network artefact a visualisation can be created
+From the ```sponge-net.qza``` network artefact a visualisation can be created
 and then viewed
 
 ```
 qiime makarsa visualise-network \
-	--i-network sponge-net.qza \
-	--o-visualization sponge-net.qzv
-#Saved Visualization to: sponge-net.qzv
+    --i-network sponge-net.qza \
+    --o-visualization sponge-net.qzv
+
 qiime tools view sponge-net.qzv
 ```
 
 The network images should open in your default browser. Alternatively, you can
-upload `sponge-net.qva` to [qiime2view](https://view.qiime2.org/). The
+upload ```sponge-net.qva``` to [qiime2view](https://view.qiime2.org/). The
 network containing the largest number of members is in the tab labelled _Group
 1_ , next largest network in the tab _Group 2_, and so on down. Trivial
 networks of two members and singletons are listed by feature in the _Pairs_ and
 _Singles_ tab respectively. 
 
-
-![largest](assets/images/SpongeSuberitidaGroup1Screen.png)
-![network](assets/images/network.png)
+![largest network](images/Sponge_Suberitida_Group1_screen.png)
+![network](images/network.png)
 
 ##### SpiecEasi Options 
 
-Several parameter options exist for `qiime makarsa spiec-easi` . For a full
-list of parameters and the defaults execute `qiime makarsa spiec-easi
---help`. Some examples are below.
+Several parameter options exist for ```qiime makarsa spiec-easi``` . For a full
+list of parameters and the defaults execute ```qiime makarsa spiec-easi
+--help```. Some examples are below.
 
-The algorithm utilised to infer the network can be set with `-p-method`
+The algorithm utilised to infer the network can be set with ```-p-method```
 parameter switch and one of 3 keywords:
-1. `glasso` [Graphical
+1. ```glasso``` [Graphical
    LASSO](https://academic.oup.com/biostatistics/article/9/3/432/224260)
    (default)
-2. `mb`  Neighbourhood selection or [Meinshausen and
+2. ``mb``  Neighbourhood selection or [Meinshausen and
    Bühlmann](https://projecteuclid.org/journals/annals-of-statistics/volume-34/issue-3/High-dimensional-graphs-and-variable-selection-with-the-Lasso/10.1214/009053606000000281.full)
    method 
-3. `slr` Sparse and Low-Rank method
+3. ``slr`` Sparse and Low-Rank method
 
 For example to infer the network from the example data using the MB method
 execute the command
 
-``` 
-qiime makarsa spiec-easi --i-table spongeFeatureTable.qza \
---o-network sponge-net.qza --p-method mb 
+```
+qiime makarsa spiec-easi \ 
+   --i-table sponge-feature-table.qza \ 
+   --o-network sponge-net.qza \ 
+   --p-method mb 
 ```
 
-The remaining parameters relate to selection of the optimal penalty λ
+The remaining parameters relate to selection of the optimal penalty $\lambda$
 in each method's [lasso](https://en.wikipedia.org/wiki/Lasso_(statistics)) like
 optimization problem. The network inference algorithms search for the optimal
-λ penalty where the complete graph and an empty graph are at the
+$\lambda$ penalty where the complete graph and an empty graph are at the
 extremes of the search range. Essentially the process is finding a balance
 between network sparsity and least-squares fit. 
 
-The range of λ values tested is between `--p-lambda-min-ratio`
-∗ λ<sub>max</sub> and λ<sub>max</sub>, where
-λ<sub>max</sub> is the theoretical upper bound on λ. This upper bound
-is max|S|, the maximum absolute value in the data correlation matrix.
+The range of $\lambda$ values tested is between ```--p-lambda-min-ratio```
+$\times\lambda_{max}$ and $\lambda_{max}$, where
+$\lambda_{max}$ is the theoretical upper bound on $\lambda$. This upper bound
+is  $\max|S|$, the maximum absolute value in the data correlation matrix.
 
-The λ range is sampled logarithmically  `--p-nlambda` times.
+The lambda range is sampled logarithmically  ```--p-nlambda``` times.
 
 #### FlashWeave
 
@@ -209,20 +222,47 @@ similar. Create the network.
 
 ```
 qiime makarsa flashweave \
-	--i-table sponge-feature-table.qza \
-	--o-network sponge-fw-net.qza
-# Saved Network to: sponge-fw-net.qza
+    --i-table sponge-feature-table.qza \
+    --o-network sponge-fw-net.qza
 ```
 Then generate the visualisation.
 ```
 qiime makarsa visualise-network \
-	--i-network sponge-fw-net.qza \
-	--o-visualization sponge-fw-net.qzv
-#Saved Visualization to: sponge-fw-net.qzv
+    --i-network sponge-fw-net.qza \
+    --o-visualization sponge-fw-net.qzv
 ```
 View the visualisation as usual
 ```
 qiime tools view sponge-net.qzv
 ```
 
-![fw-network](assets/images/sponge-fw-network.png)
+![fw-network](images/sponge-fw-network.png)
+
+#### Community detection
+
+Once a network graph is generated, this can be used to identify modules of
+co-occurring features. This is useful for, e.g., grouping these features
+for downstream analyses. For module detection, q2-makarsa employs the 
+[Louvain method](https://doi.org/10.1088%2F1742-5468%2F2008%2F10%2FP10008).
+
+```
+qiime makarsa louvain-communities \
+   --i-network sponge-net.qza \
+   --o-community node-map.qza
+```
+
+Now you can colour your nodes by community.
+```
+qiime makarsa visualise-network \
+    --i-network sponge-net.qza \
+    --m-metadata-file node-map.qza \
+    --o-visualization sponge-louvain-net.qzv
+```
+
+Alternatively you can view the resulting node map (showing which features belong to 
+each module).
+```
+qiime metadata tabulate \
+   --m-input-file node-map.qza \
+   --o-visualization node-map.qzv
+```
