@@ -172,8 +172,8 @@ network containing the largest number of members is in the tab labelled _Group
 networks of two members and singletons are listed by feature in the _Pairs_ and
 _Singles_ tab respectively. 
 
-![largest network](images/Sponge_Suberitida_Group1_screen.png)
-![network](images/network.png)
+![largest network](assets/images/Sponge_Suberitida_Group1_screen.png)
+![network](assets/images/network.png)
 
 ##### SpiecEasi Options 
 
@@ -236,7 +236,7 @@ View the visualisation as usual
 qiime tools view sponge-net.qzv
 ```
 
-![fw-network](images/sponge-fw-network.png)
+![fw-network](assets/images/sponge-fw-network.png)
 
 #### Community detection
 
