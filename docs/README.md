@@ -11,7 +11,7 @@ QIIME 2 environment together with additional network visualisation.
 
 ### QIIME2
 
-<img align="right" src="images/qiime2.png">
+<img align="right" src="assets/images/qiime2.png">
 
 [QIIME 2](https://qiime2.org/) is a powerful, extensible, and decentralized
 microbiome analysis package with a focus on data and analysis transparency.
