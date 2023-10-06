@@ -226,7 +226,7 @@ qiime makarsa flashweave \
     --o-network sponge-fw-net.qza
 ```
 
-If we wish to allow FlashWeave to use the Julia language's built-in [parallel infrastructure](https://docs.julialang.org/en/v1/manual/parallel-computing/index.html) then we add the option ```-p-num-procs``` to the command above with an integer number of worker processes on which to run the code.
+If we wish to allow FlashWeave to use the Julia language's built-in [parallel infrastructure](https://docs.julialang.org/en/v1/manual/parallel-computing/index.html) then we add the option ```--p-num-procs``` to the command above with an integer number of worker processes on which to run the code.
 
 Then generate the visualisation.
 ```
