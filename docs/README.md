@@ -172,8 +172,8 @@ network containing the largest number of members is in the tab labelled _Group
 networks of two members and singletons are listed by feature in the _Pairs_ and
 _Singles_ tab respectively. 
 
-![largest network](assets/images/SpongeSuberitidaGroup1Screen.png)
-![network](assets/images/network.png)
+![largest network](assets/images/Sponge_Suberitida_Group1_screen.png)
+![network](images/network.png)
 
 ##### SpiecEasi Options 
 
@@ -225,6 +225,9 @@ qiime makarsa flashweave \
     --i-table sponge-feature-table.qza \
     --o-network sponge-fw-net.qza
 ```
+
+If we wish to allow FlashWeave to use the Julia language's built-in [parallel infrastructure](https://docs.julialang.org/en/v1/manual/parallel-computing/index.html) then we add the option ```-p-num-procs``` to the command above with an integer number of worker processes on which to run the code.
+
 Then generate the visualisation.
 ```
 qiime makarsa visualise-network \
@@ -266,15 +269,16 @@ qiime metadata tabulate \
    --m-input-file node-map.qza \
    --o-visualization node-map.qzv
 ```
+
 The node map can be input as feature metadata to other QIIME 2 actions. For
 example, the following action can be used to group the features in a feature
 table based on their community affiliation.
 ```
 qiime feature-table group \
-    --i-table sponge-feature-table.qza \
-    --p-axis feature \
-    --m-metadata-file node-map.qza \
-    --m-metadata-column Community \
-    --p-mode sum \
-    --o-grouped-table grouped-table.qza
+	--i-table sponge-feature-table.qza \
+	--p-axis feature \
+	--m-metadata-file node-map.qza \
+	--m-metadata-column Community \
+	--p-mode sum \
+	--o-grouped-table grouped-table.qza
 ```
