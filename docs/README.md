@@ -11,7 +11,7 @@ QIIME 2 environment together with additional network visualisation.
 
 <iframe src="viz/index.html" height="800px" width="100%" style="border:none;"></iframe>
 
-Click here to open the [visualisation.](viz/index.html){:target="_blank"} in a new tab.
+Click here to open the [visualisation](viz/index.html){:target="_blank"} in a new tab.
 
 ## What is involved
 
