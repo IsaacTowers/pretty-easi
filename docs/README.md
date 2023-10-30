@@ -7,6 +7,8 @@ q2-makarsa is a plugin to incorporate some functionality from the
 [FlashWeave](https://github.com/meringlab/FlashWeave.jl) packages into the
 QIIME 2 environment together with additional network visualisation.
 
+[Visualisation](_includes/index.html)
+
 ## What is involved
 
 ### QIIME2
@@ -72,8 +74,8 @@ development continues additional features will be listed here.
 
 q2-makarsa requires a working QIIME 2 environment, installed using conda.
 Please follow the "Natively installing QIIME 2"
-[instructions](https://docs.qiime2.org/2023.2/install/native/). (If that link
-is outdated, please navigate there in the latest QIIME 2
+[instructions](https://docs.qiime2.org/2023.9/install/native/). (If that link
+is outdated, please navigate to the equivalent page within the latest QIIME 2
 [docs](https://docs.qiime2.org/).)
 
 Make sure your conda environment is activated (as described in the QIIME 2
