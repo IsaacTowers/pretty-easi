@@ -7,10 +7,11 @@ q2-makarsa is a plugin to incorporate some functionality from the
 [FlashWeave](https://github.com/meringlab/FlashWeave.jl) packages into the
 QIIME 2 environment together with additional network visualisation.
 
-[Visualisation](viz/index.html)
+## Interactive Network Visualisation 
 
-<iframe src="viz/index.html" height="600px" width="100%" style="border:none;"></iframe>
+<iframe src="viz/index.html" height="800px" width="100%" style="border:none;"></iframe>
 
+Click here to open the full page [visualisation.](viz/index.html)
 
 ## What is involved
 
