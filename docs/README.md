@@ -9,6 +9,9 @@ QIIME 2 environment together with additional network visualisation.
 
 [Visualisation](viz/index.html)
 
+<iframe src="viz/index.html" height="600px" width="100%" style="border:none;"></iframe>
+
+
 ## What is involved
 
 ### QIIME2
