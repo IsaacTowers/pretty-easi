@@ -11,7 +11,7 @@ QIIME 2 environment together with additional network visualisation.
 
 Select a node to see its metrics displayed in the table. Double click a node to see its highlight its nearest neighbours. Node colouring and size is controlled with the drop-down menus below the network. Further the network is dynamic, drag it across the screen and change its behaviour via the sliders below.  
 
-<iframe src="viz/index.html" height="800px" width="100%" style="border:none;"></iframe>
+<iframe src="viz/index.html" height="800px" width="150%" style="border:none;"></iframe>
 
 Click here to open the [visualisation](viz/index.html){:target="_blank"} in a new tab.
 
